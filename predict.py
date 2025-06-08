@@ -146,6 +146,11 @@ class VaricoseVeinsPredictor:
             # Extract confidence
             confidence = float(best_pred[4].item())
             
+            # Clamp confidence to maximum of 99.9 if it exceeds 100
+            if confidence > 100.0:
+                confidence = 99.9
+                logger.warning(f"Confidence exceeded 100, clamped to {confidence}")
+            
             # Get bounding box coordinates
             box = best_pred[:4]
             
