@@ -1,6 +1,5 @@
 import onnxruntime as ort
 import numpy as np
-import cv2
 from PIL import Image
 from typing import Dict, Any, Tuple, List
 import os
